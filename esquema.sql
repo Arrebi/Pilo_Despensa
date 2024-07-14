@@ -179,7 +179,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'parzibyte','$2y$10$oAdnaAGkoy9n/dyR0Y4ZseoL4BzR8fdXrlMrxlrpGliGO14pWEb/e','');
+INSERT INTO `usuarios` VALUES (1,'arrebi','$2y$10$byReQAHwO6tJZMSpSgueUOUOnbKH2cG5ZE4pQwQUVwj71BcqfCguW','');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
