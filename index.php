@@ -10,6 +10,9 @@ error_reporting(0); #Desactivamos el reporte de errores.
  * Para que funcione bien, el archivo .htaccess debe estar configurado correctamente
  *******************************/
 
+// Definir zona horaria visual
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
 #Definimos la raíz del directorio
 if (!defined("RAIZ")) define("RAIZ", dirname(__FILE__));
 if (!defined("MINUTOS_EXPIRACION_SESION")) define("MINUTOS_EXPIRACION_SESION", 24 * 60);

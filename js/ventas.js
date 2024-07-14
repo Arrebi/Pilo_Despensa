@@ -110,7 +110,18 @@ function dame_total_productos_locales() {
 }
 
 /*
-productos_vender[2] = {cantidad: 1, codigo: "77", existencia: "3.00", familia: "SIN", nombre: "pan", posicion: 3, precio_compra: 1000, precio_venta: 45000, rowid: 4, total: 3000, utilidad: 500}
+productos_vender[2] = {
+    cantidad: 1, 
+    codigo: "77", 
+    existencia: "3.00", 
+    familia: "SIN", 
+    nombre: "pan", 
+    posicion: 3, 
+    precio_compra: 1000, 
+    precio_venta: 45000, 
+    rowid: 4, 
+    total: 3000, 
+    utilidad: 500}
 */ 
 function agrega_producto_local(producto) {
     var ya_esta_en_la_lista = producto_ya_esta_en_lista(producto.codigo);
@@ -133,6 +144,55 @@ function agrega_producto_local(producto) {
     dibujar_productos();
 }
 
+// Agregar producto manual
+$('#realizar_carga_manual').on('submit', function(event)
+{
+    event.preventDefault();
+    var nombre_producto = $('#nombre_producto').val();
+    var precio_producto = $('#precio_producto').val();
+
+    $('#nombre_producto').focus().parent().removeClass('has-error');
+    $('#precio_producto').focus().parent().removeClass('has-error');
+
+    if(nombre_producto.length > 0 && precio_producto.length > 0)
+    {
+        var _producto = new
+        Producto(
+            0,
+            0,
+            nombre_producto,
+            1,
+            precio_producto,
+            ayudante_posicion,
+            'MANUAL',
+            precio_producto,
+            99,
+        );
+        productos_vender.push(_producto);
+        ayudante_posicion++;
+
+        $('#nombre_producto').val("");
+        $('#precio_producto').val("");
+        $("#modal_agregar_manual").modal("hide");
+
+        dibujar_productos();
+    }
+    else
+    {
+        if(nombre_producto.length < 1)
+        {
+            $('#nombre_producto').focus().animateCss("shake");
+            $('#nombre_producto').focus().parent().addClass('has-error');
+        }
+
+        if(precio_producto.length < 1)
+        {
+            $('#precio_producto').focus().animateCss("shake");
+            $('#precio_producto').focus().parent().addClass('has-error');
+        }
+    }
+    
+});
 // 
 
 function producto_ya_esta_en_lista(codigo) {
@@ -432,8 +492,13 @@ function escuchar_elementos() {
     $("#quitar_ultimo_producto").click(function () {
         quitar_ultimo_producto();
     });
+    // Preparar para realizar la venta
     $("#preparar_venta").click(function () {
         preparar_para_realizar_venta();
+    });
+    // Agregar producto manual
+    $("#agregar_producto_manual").click(function() {
+        $("#modal_agregar_manual").modal("show");
     });
     $("#cancelar_toda_la_venta").click(function () {
         cancelar_venta();
@@ -611,4 +676,3 @@ function comprueba_si_existe_codigo(codigo) {
 
     });
 }
-

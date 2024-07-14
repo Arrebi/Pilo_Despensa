@@ -151,7 +151,10 @@ function consultar_piezas_producto($rowid)
     $sentencia = $base_de_datos->prepare("SELECT existencia FROM inventario WHERE rowid = ?;");
     $sentencia->execute([$rowid]);
     $fila = $sentencia->fetch();
-    return $fila["existencia"];
+    if(isset($fila["existencia"]))
+        return $fila["existencia"];
+    else
+        return 99;
 }
 
 function eliminar_producto($rowid)

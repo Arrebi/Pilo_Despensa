@@ -43,6 +43,48 @@
 </div>
 
 
+<div id="modal_agregar_manual" class="modal fade" role="dialog">>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Agregar Producto Manual</h4>
+            </div>
+            <form id="realizar_carga_manual" action="" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-md-6">
+                                <label for="pago_usuario">Nombre del producto</label>
+                                <input data-requerido="true" placeholder="Escriba nombre ej: PAN, FIAMBRE, ETC." type="text" id="nombre_producto" class="form-control">
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <label for="pago_usuario">Precio del producto</label>
+                                <input placeholder="El valor en pesos" type="number" id="precio_producto" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <h2 hidden="hidden">Cambio: <span id="contenedor_cambio"></span></h2>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div hidden="hidden" class="alert">
+                                <span id="mostrar_resultados_eliminar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button id="realizar_carga_manual" class="form-control btn btn-success">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div id="modal_procesar_venta" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">

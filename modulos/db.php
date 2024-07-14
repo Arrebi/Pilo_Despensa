@@ -1,4 +1,6 @@
 ﻿<?php  
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
 $usuario = "root";
 $contraseña = "";
 const NOMBRE_BASE_DE_DATOS = "pilo";

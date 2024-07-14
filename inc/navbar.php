@@ -10,7 +10,7 @@ if (!isset($_SESSION)) exit("<script>window.location.href = '../';</script>");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" id="marca_del_producto"><?php echo NOMBRE_NEGOCIO ?></a>
+            <a class="navbar-brand" href="#" id="marca_del_producto"><?=NOMBRE_NEGOCIO;?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -87,11 +87,11 @@ if (!isset($_SESSION)) exit("<script>window.location.href = '../';</script>");
             </div>
             <div class="modal-body">
                 <div class="well">
-                    <h1>OkVenta
+                    <h1>Pilo
                         <small>v1.0</small>
                     </h1>
                     <br>
-                    <h2>Desarrollado y mantenido por <a target="_blank" href="https://parzibyte.me/blog">Parzibyte</a></h2>
+                    <h2>...</h2>
                 </div>
             </div>
             <div class="modal-footer">
