@@ -64,7 +64,6 @@
                             </div>
                         </div>
                     </div>
-                    <h2 hidden="hidden">Cambio: <span id="contenedor_cambio"></span></h2>
                 </div>
                 <div class="modal-footer">
                     <div class="row">
